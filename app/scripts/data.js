@@ -13,30 +13,35 @@ APP.data = (function () {
 		getDirectionName: function (route, runSuffix, callback) {
 			var url = API_BASE_URL + 'routes/' + route + '/runs/';
 
-			$.get(url, function (data) {
-				var done = false;
+			// $.get(url, function (data) {
+			$.ajax({
+				url: url, 
+				async: false,
+				success: function (data) {
+					var done = false;
 
-				_.each(data.items, function (item) {
-					// Hack to stop if we found it already
-					if (done) { return; }
+					_.each(data.items, function (item) {
+						// Hack to stop if we found it already
+						if (done) { return; }
 
-					var runId = item.route_id,
-						routeToken = runId.substring(0, runId.indexOf('_')),
-						runSuffixToken = runId.substr(runId.length - 1);
+						var runId = item.route_id,
+							routeToken = runId.substring(0, runId.indexOf('_')),
+							runSuffixToken = runId.substr(runId.length - 1);
 
-					if (routeToken == route && runSuffix == runSuffixToken) {
-						var displayName = item.display_name,
-							name = displayName.split(' ').slice(2).join(' ');
+						if (routeToken == route && runSuffix == runSuffixToken) {
+							var displayName = item.display_name,
+								name = displayName.split(' ').slice(2).join(' ');
 
-						// Ignore anything after " - "
-						if (name.indexOf('Downtown LA') > -1) {
-							name = 'Downtown LA';
+							// Ignore anything after " - "
+							if (name.indexOf('Downtown LA') > -1) {
+								name = 'Downtown LA';
+							}
+
+							callback(name);
+							done = true;
 						}
-
-						callback(name);
-						done = true;
-					}
-				});
+					});
+				}
 			});
 		},
 
