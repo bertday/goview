@@ -1,18 +1,13 @@
-APP.home = function () {
+// require('spaghetti-code-nightmare');
+
+APP.home = function ()
+{
+	var stops = APP.config.stops,
+		timer;
+
 	return {
 		init: function ()
 		{
-			// Get stop names
-			var stops = APP.config.stops;
-			// 	stop_name = {};
-
-			// _.each(stops, function (stop) {
-			// 	APP.data.getStopName(stop, function (data) {
-			// 		stop_name[stop] = data;
-			// 		console.log(stop_name);
-			// 	});
-			// });
-
 			// Get predictions
 			APP.data.getPredictions(stops, function (predictions)
 			{
@@ -27,7 +22,8 @@ APP.home = function () {
 						var stopDiv = ' \
 							<div class="stop" id="stop-<%= stopId %>"> \
 								<p class="stop-name"><%= stopName %></p> \
-						</div> \
+							</div> \
+							<hr> \
 						',
 							stopDivString = _.template(stopDiv, {
 								stopName: stopName,
@@ -83,6 +79,35 @@ APP.home = function () {
 					}); // end get stop name
 				}); // end loop stops
 			});
+
+			// Start timer
+			timer = setInterval(function () { APP.home.update(); }, 6000);
+			
+			// Supa hack to kill timer
+			window.kill = function () {
+				clearInterval(timer);
+			};
+
+		}, // end init
+
+		update: function ()
+		{
+			// Get predictions
+			APP.data.getPredictions(stops, function (data)
+			{
+				// Loop over stops
+				_.each(data, function (routes, stop) {
+					// Loop over routes
+					_.each(routes, function (directions, route) {
+						// Loop over directions (this corresonds to one route row)
+						_.each(directions, function (predictions, direction) {
+							// Update prediction spans
+							
+						});
+					});
+				});
+			});
+			// Loop over 
 		},
 	};
 }();
