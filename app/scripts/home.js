@@ -120,8 +120,7 @@ APP.home = function ()
 						});
 					});
 				});
-			});
-			// Loop over 
+			}); 
 		},
 	};
 }();
