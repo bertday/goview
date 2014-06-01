@@ -5,9 +5,15 @@ A DIY transit info screen for the LA Metro. An easy and low-cost way for busines
 Node, Yeoman, JavaScript, HTML5, CSS3, Google Fonts.
 
 ## Development
-`grunt serve` to preview application during development
+* Download and install `Node.js` [http://nodejs.org/download/](http://nodejs.org/download/)
 
-[Deployment Link Here](http://localhost:9000)
+* Download and install `npm` (included with most recent version of Node.JS) [https://www.npmjs.org/](https://www.npmjs.org/)
+
+* `npm install -g yo` installs Grunt and Bower automatically
+
+* `grunt serve` to preview application during development
+
+* [Deployment Link Here](http://localhost:9000)
 
 ## To-Do
 * Configuration / settings page
