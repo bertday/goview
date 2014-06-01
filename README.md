@@ -1,4 +1,4 @@
-# Metro Display
+# GoView
 A DIY transit info screen for the LA Metro. An easy and low-cost way for business owners or anyone who wish to provide useful public transit arrival times to encourage LA Metro ridership.
 
 Deployed! [http://rmart.in/goview/](http://rmart.in/goview/)
