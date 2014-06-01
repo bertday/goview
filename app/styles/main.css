@@ -22,6 +22,8 @@ body {
 
 
 #leftcol {
+    background: url('/images/bus.png') no-repeat;
+    background-position: 10% 10%;
     width: 66%;
     height: 100vh;
     /*background-color: pink;*/
@@ -29,6 +31,8 @@ body {
 }
 
 #rightcol {
+    background: url('/images/ig_logo.png') no-repeat;
+    background-position: 95% 3%;
     width: 34%;
     height: 100vh;
     background-color: #306180;
@@ -37,7 +41,27 @@ body {
 }
 
 .rightcol-element {
-    padding: 10px;
+    padding-left: 20px;
+}
+
+#ig-logo {
+    padding-top: 20px;
+    height: 100px;
+    width: 100px;
+}
+
+#ig-follow {
+    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size:1.5em;
+}
+
+#ig-handle {
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size:3em;
 }
 
 #content {
@@ -92,6 +116,12 @@ body {
 .temp-unit {
 }
 
+.stop-name {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .route-id {
     font-weight: 700;
     display: inline-block;
@@ -120,4 +150,10 @@ body {
     font-weight: 200;
 }
 
-/*400,100,500,700,900,100italic,300,300italic,400italic,500italic,700italic,900italic*/
+hr {
+    border: 0;
+    width: 98%;
+    color: white;
+    background-color: white;
+    height: 2px;
+}
