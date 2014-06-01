@@ -23,12 +23,31 @@ APP.home = function () {
 					APP.data.getStopName(stop, function (stopName) {
 					
 					// Make DOM element
-					var stopDiv = "<div><%= stopName %></div>",
-						stopDivString = _.template(stopDiv, {stopName: stopName});
+					console.log(stopName)
+					var stopDiv = ' \
+						<div class="stop-row" id="stop-<%= stopId %>"> \
+							<p class="stop-name"><%= stopName %></p> \
+					</div> \
+					',
+						stopDivString = _.template(stopDiv, {
+							stopName: stopName,
+							stopId: stop
+						});
+
+					console.log(stopDivString)
 					
 					// Append
-					$('body').append($.parseHTML(stopDivString));
+					$('#transit').append($.parseHTML(stopDivString));
 					
+
+					var routeDiv = ' \
+            <div class="route" id="route-<%= routeId %>-<%= directionId %>"> \
+            <span class="route-id"><%= routeId %></span> \
+            <span class="route-name"><%= routeName %></span> \
+            <span class="arrivals"><%= arrivals %></span> \
+            </div> \
+					'
+
 					// Loop over routes
 						// Loop over directions
 							// Make route-direction row and populate predictions
