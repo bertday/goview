@@ -18,7 +18,6 @@ APP.home = function ()
 					APP.data.getStopName(stop, function (stopName) {
 					
 						// Make DOM element
-						console.log(stopName)
 						var stopDiv = ' \
 							<div class="stop" id="stop-<%= stopId %>"> \
 								<p class="stop-name"><%= stopName %></p> \
@@ -29,8 +28,6 @@ APP.home = function ()
 								stopName: stopName,
 								stopId: stop
 							});
-
-						console.log(stopDivString)
 						
 						// Append
 						$('#transit').append($.parseHTML(stopDivString));
@@ -51,8 +48,6 @@ APP.home = function ()
 						// TODO: sort numerically
 						// _.each(routes, function (directions, route) {
 						var routesSorted = _.map(routes, function (value, key) { return key; });
-						console.log(routesSorted);
-
 
 						_.each(routesSorted, function (route) {
 							// Get directions
@@ -106,8 +101,22 @@ APP.home = function ()
 					_.each(routes, function (directions, route) {
 						// Loop over directions (this corresonds to one route row)
 						_.each(directions, function (predictions, direction) {
-							// Update prediction spans
+							// Get stop row
+							$stop = $('#stop-' + stop);
+							
+							// Get route row
+							var routeDivId = '#route-' + route + '-' + direction;
+							// $route = $('#route-' + route + '-' + direction);
+							// console.log($route);
 
+							// Update each span
+							$arrival1 = $(routeDivId + ' .arrival-1');
+							$arrival2 = $(routeDivId + ' .arrival-2');
+							$arrival3 = $(routeDivId + ' .arrival-3');
+
+							$arrival1.html(predictions[0]);
+							$arrival2.html(predictions[1]);
+							$arrival3.html(predictions[2]);
 						});
 					});
 				});
