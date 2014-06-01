@@ -31,7 +31,7 @@ body {
 #rightcol {
     width: 34%;
     height: 100vh;
-    background-color: #04B1D6;
+    background-color: #306180;
     float: right;
     box-sizing: border-box;
 }
@@ -92,7 +92,7 @@ body {
 .temp-unit {
 }
 
-.route-number {
+.route-id {
     font-weight: 700;
     display: inline-block;
     width: 2em;
@@ -103,7 +103,7 @@ body {
 .route-name {
     font-weight: 700;
     display: inline-block;
-    width: 13em;
+    width: 10em;
 }
 
 .eta {
