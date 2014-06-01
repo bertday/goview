@@ -6,6 +6,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,500,700,900,100italic,300,300italic,400italic,500italic,700italic,900italic' rel='stylesheet' type='text/css'>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
@@ -13,6 +14,7 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <!-- endbuild -->
     </head>
     <body>
@@ -20,17 +22,28 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <div id="leftcol">
+            <div id="transit">
+                <div class="stop-row">
+                    <p class="stop-name"></p>
+                    <div class="route"><span class="route-number">7</span> <span class="route-name">El Monte via Valley Blvd</span> <span class="eta">NOW, 5, 10</span>
+                    </div>
+                    <div class="route"><span class="route-number">76</span> <span class="route-name">El Monte</span> <span class="eta">7, 9, 11</span>
+                    </div>
+                    <div class="route"><span class="route-number">766</span> <span class="route-name">El Monte via Valley</span> <span class="eta">5</span> <span class="eta-next">5</span>
+                    </div>
+                </div>
 
-        <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
 
-
-          </ul>
+            </div>
+            <div id="weather">
+                <i class="fa fa-sun-o weather-icon"></i><span class="temp">72</span><span class="temp-unit">°F</span>
+            </div>
         </div>
 
+        <div id="rightcol">
+            Follow us! @Businessname
+        </div>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
