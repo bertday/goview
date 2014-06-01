@@ -78,6 +78,10 @@ APP.home = function ()
 						}); // end loop routes
 					}); // end get stop name
 				}); // end loop stops
+
+
+				// Scroll
+				// APP.home.scrollFeed();
 			});
 
 			// Start timer
@@ -121,6 +125,20 @@ APP.home = function ()
 					});
 				});
 			}); 
+		},
+
+		scrollFeed: function () {
+			$igFeed = $('#ig-feed');
+			
+			$igFeed.animate(
+				{
+					"margin-top": "-200px"
+				},
+				2000,
+				function () {
+					APP.home.scrollFeed();
+				}
+			);
 		},
 	};
 }();

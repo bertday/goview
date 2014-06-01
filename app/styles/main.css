@@ -38,6 +38,7 @@ body {
     background-color: #306180;
     float: right;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .rightcol-element {
@@ -65,13 +66,23 @@ body {
 }
 
 #ig-feed {
-    /*width: 100%;*/
+    overflow: hidden;
+}
+
+#ig-feed > img {
+    display: block;
+    /*overflow: hidden;*/
 }
 
 #content {
 
 }
 
+p.quote {
+    font-family: Georgia;
+    font-size: 18px;
+    font-style: italic;
+}
 
 
 #transit {
