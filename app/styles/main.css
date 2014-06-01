@@ -64,6 +64,10 @@ body {
     font-size:3em;
 }
 
+#ig-feed {
+    /*width: 100%;*/
+}
+
 #content {
 
 }
@@ -82,8 +86,10 @@ body {
 }
 
 #weather {
-    /*background-color: rgba(0,0,0,0.7);*/
+    background-color: rgba(0,0,0,0.7);
     background: url('/images/weather.png');
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
     height: 34vh;
     color: white;
     box-sizing: border-box;
@@ -154,6 +160,33 @@ hr {
     border: 0;
     width: 98%;
     color: white;
+    opacity: 0.2;
     background-color: white;
-    height: 2px;
+    height: 3px;
+}
+
+.arrivals {
+    display: inline-block;
+    width: 5.5em;
+    float: right;
+    /*background-color: pink;*/
+}
+.arrival-1 {
+    display: inline-block;
+    width: 1.5em;
+    text-align: right;
+}
+.arrival-2 {
+    display: inline-block;
+    width: 1.2em;
+    text-align: right;
+    font-weight: 400;
+    opacity: 0.5;
+}
+.arrival-3 {
+    display: inline-block;
+    width: 1.2em;
+    text-align: right;
+    font-weight: 300;
+    opacity: 0.2;
 }
