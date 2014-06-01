@@ -40,7 +40,11 @@ APP.home = function ()
 				            <div class="route" id="route-<%= routeId %>-<%= directionId %>"> \
 				            <span class="route-id"><%= routeId %></span> \
 				            <span class="route-name"><%= directionName %></span> \
-				            <span class="arrivals"><%= arrivals %></span> \
+				            <span class="arrivals"> \
+					            <span class="arrival-1"><%= arrival1 %></span> \
+					            <span class="arrival-2"><%= arrival2 %></span> \
+					            <span class="arrival-3"><%= arrival3 %></span> \
+					        </span> \
 				            </div>';
 
 						// Loop over routes
@@ -61,12 +65,13 @@ APP.home = function ()
 								APP.data.getDirectionName(route, direction, function(directionName)
 								{
 									// Make route-direction row and populate predictions
-									var arrivals = predictions.join(', '),
 										routeDivString = _.template(routeDiv, {
 											routeId: route,
 											directionId: direction,
 											directionName: directionName,
-											arrivals: arrivals
+											arrival1: predictions[0],
+											arrival2: predictions[1],
+											arrival3: predictions[2],
 										});
 
 									// Get stop div
@@ -102,7 +107,7 @@ APP.home = function ()
 						// Loop over directions (this corresonds to one route row)
 						_.each(directions, function (predictions, direction) {
 							// Update prediction spans
-							
+
 						});
 					});
 				});
