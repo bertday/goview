@@ -25,7 +25,7 @@ APP.home = function () {
 					// Make DOM element
 					console.log(stopName)
 					var stopDiv = ' \
-						<div class="stop-row" id="stop-<%= stopId %>"> \
+						<div class="stop" id="stop-<%= stopId %>"> \
 							<p class="stop-name"><%= stopName %></p> \
 					</div> \
 					',
@@ -41,16 +41,43 @@ APP.home = function () {
 					
 
 					var routeDiv = ' \
-            <div class="route" id="route-<%= routeId %>-<%= directionId %>"> \
-            <span class="route-id"><%= routeId %></span> \
-            <span class="route-name"><%= routeName %></span> \
-            <span class="arrivals"><%= arrivals %></span> \
-            </div> \
-					'
+			            <div class="route" id="route-<%= routeId %>-<%= directionId %>"> \
+			            <span class="route-id"><%= routeId %></span> \
+			            <span class="route-name"><%= directionName %></span> \
+			            <span class="arrivals"><%= arrivals %></span> \
+			            </div>';
 
 					// Loop over routes
+					_.each(routes, function (directions, route) {
 						// Loop over directions
-							// Make route-direction row and populate predictions
+						_.each(directions, function (predictions, direction)
+						{
+							// Get direction name
+							APP.data.getDirectionName(route, direction, function(directionName)
+							{
+								// Make route-direction row and populate predictions
+								var arrivals = predictions.join(', '),
+									routeDivString = _.template(routeDiv, {
+										routeId: route,
+										directionId: direction,
+										directionName: directionName,
+										arrivals: arrivals
+									});
+
+								// Get stop div
+								var $stop = $('#stop-' + stop);
+								$stop.append($.parseHTML(routeDivString));
+
+								
+							});
+
+							
+						});
+
+
+
+					});
+
 				});
 
 

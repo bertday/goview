@@ -5,11 +5,11 @@ var APP = (function ()
 	// Private
 	return {
 		init: function () {
-			
+
 		},
 
 		config: {
-			stops: [15401, 6989]
+			stops: [8079, 16309, 1443]
 		},
 
 	};

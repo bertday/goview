@@ -28,6 +28,11 @@ APP.data = (function () {
 						var displayName = item.display_name,
 							name = displayName.split(' ').slice(2).join(' ');
 
+						// Ignore anything after " - "
+						if (name.indexOf('Downtown LA') > -1) {
+							name = 'Downtown LA';
+						}
+
 						callback(name);
 						done = true;
 					}
@@ -97,7 +102,17 @@ APP.data = (function () {
 				}
 
 				// Add prediction
-				route_directions[routeId][runSuffix].push(item.minutes);
+				var predictions = route_directions[routeId][runSuffix];
+				
+				// Limit 3
+				if (predictions.length < 3) {
+					var minutes = item.minutes;
+					
+					// Rename 0 => Now
+					if (minutes == 0) minutes = 'Now';
+
+					predictions.push(minutes);
+				}
 			});
 
 			return route_directions;
