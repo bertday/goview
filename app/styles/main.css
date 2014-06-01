@@ -74,17 +74,6 @@ body {
     /*overflow: hidden;*/
 }
 
-#content {
-
-}
-
-p.quote {
-    font-family: Georgia;
-    font-size: 18px;
-    font-style: italic;
-}
-
-
 #transit {
     /*background-color: rgba(0,0,0,0.3);*/
     height: 66vh;
