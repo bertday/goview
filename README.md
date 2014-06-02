@@ -1,4 +1,6 @@
 # GoView
+![alt text](http://i29.photobucket.com/albums/c259/dandydanny/DEV/goview_screenshot_zps8a90d3a6.png "GoView Screenshot")
+
 A DIY transit info screen for the LA Metro. An easy and low-cost way for business owners or anyone who wish to provide useful public transit arrival times to encourage LA Metro ridership.
 
 Deployed! [http://rmart.in/goview/](http://rmart.in/goview/)
@@ -20,9 +22,11 @@ Node, Yeoman, JavaScript, HTML5, CSS3, Google Fonts.
 * Social media check-in
 
 ## Brought to you by
+![alt text](http://i29.photobucket.com/albums/c259/dandydanny/DEV/team_goview_hackforla_zps6515a670.jpg "Robert, Daniel, and Ray. Photo courtesy of @HackForLA")
+
 | Name          | Twitter                                           | Responsibilities                             |
 | ------------- | ------------------------------------------------- | ---------------------------------------------|
-| Robert Martin | [@welfareyacht](https://twitter.com/welfareyacht) | Software architect, API, back-end JavaScript |
+| Robert Martin | [@rbrt_mrtn](https://twitter.com/rbrt_mrtn)       | Software architect, API, back-end JavaScript |
 | Raymond Dang  | [@subwayray](https://twitter.com/subwayray)       | UI, UX, graphic design, user story, planning |
 | Daniel W. Lu  | [@dandydanny](https://twitter.com/dandydanny)     | Front-end UI, CSS                            |
 
