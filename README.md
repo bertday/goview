@@ -8,10 +8,11 @@ Deployed! [http://rmart.in/goview/](http://rmart.in/goview/)
 ## Tech Stack
 Node, Yeoman, JavaScript, HTML5, CSS3, Google Fonts.
 
-## Development
+## Development Setup
 * Download and install `Node.js` [http://nodejs.org/download/](http://nodejs.org/download/)
 * Download and install `npm` (included with most recent version of Node.JS) [https://www.npmjs.org/](https://www.npmjs.org/)
 * `npm install -g yo` installs Grunt and Bower automatically
+* `bower update` install dependencies (lodash and jQuery)
 * `grunt serve` to preview application during development
 
 ## To-Do
