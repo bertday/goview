@@ -195,3 +195,12 @@ hr {
     opacity: 0.2;
     /*background-color: blue;*/
 }
+
+#logo {
+    position: fixed;
+    z-index: 100;
+    bottom: 1.3vh;
+    left: 1vw;
+    width: 10vw;
+    opacity: 0.3;
+}
